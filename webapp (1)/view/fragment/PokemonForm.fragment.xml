@@ -1,0 +1,70 @@
+<core:FragmentDefinition
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
+    xmlns="sap.m"
+>
+
+    <Panel id="pnlPkmForm">
+        <!-- Parte superior del Panel (Nombre y Boton Save) -->
+        <headerToolbar>
+            <OverflowToolbar id="ovfToolbarForm">
+                <Title
+                    id="ttleForm"
+                    text="Agrege pokemones a la Pokedex"
+                    level="H2"
+                />
+                
+                <ToolbarSpacer id="toolbarSpacerForm" />
+                <Button
+                    id="btnSavePokemonForm"
+                    icon="sap-icon://save"
+                    text="Guardar"
+                    press="savePokemonForm"
+                    enabled="true"
+                />
+            </OverflowToolbar>
+        </headerToolbar>
+        <f:SimpleForm id="smplPkmForm">
+        <f:content>
+            <Label
+                id="lblPkmName"
+                text="Nombre"
+            />
+            <Input
+                id="inputPkmName"
+                required="true"
+                value="{newPkm/name}"
+            />
+            <Label
+                id="lblPkmOrder"
+                text="Orden"
+            />
+            <Input
+                id="inputPkmOrder"
+                required="true"
+                value="{newPkm/order}"
+            />
+            <Label
+                id="lblPkmHeight"
+                text="Estatura"
+            />
+            <Input
+                id="inputPkmHeight"
+                required="true"
+                value="{newPkm/height}"
+            />
+            <Label
+                id="lblPkmWeight"
+                text="Peso"
+            />
+            <Input
+                id="inputPkmWeight"
+                required="true"
+                value="{newPkm/weight}"
+            />
+        </f:content>
+    </f:SimpleForm>
+    </Panel>
+</core:FragmentDefinition>

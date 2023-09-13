@@ -1,0 +1,11 @@
+[data-colour=1]{
+    color: red;
+}
+
+[data-colour="green"]{
+    color: green;
+}
+
+[data-colour="yellow"]{
+    color: yellow;
+}

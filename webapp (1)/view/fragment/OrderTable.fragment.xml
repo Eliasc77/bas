@@ -1,0 +1,116 @@
+<core:FragmentDefinition
+    xmlns:l="sap.ui.layout"
+    xmlns:model="sap.ui.model"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+>
+    <Table
+        id="pedidosTable"
+        items="{orderModel>/order}"
+    >
+        <!-- Cabecera de la Tabla -->
+        <columns>
+            <Column id="colPedidosTable1">
+                <Text
+                    id="txtPedidoNum"
+                    text="{i18n>orderNum}"
+                />
+            </Column>
+            <Column id="colPedidosTable2">
+                <Text
+                    id="txtPedidoFechaPedido"
+                    text="{i18n>orderDate}"
+                />
+            </Column>
+            <Column id="colPedidosTable3">
+                <Text
+                    id="txtPedidoCliente"
+                    text="{i18n>orderClient}"
+                />
+            </Column>
+            <Column id="colPedidosTable4">
+                <Text
+                    id="txtPedidoDireccionEnvio"
+                    text="{i18n>orderAdress}"
+                />
+            </Column>
+            <Column id="colPedidosTable5">
+                <Text
+                    id="txtPedidoMetodoPago"
+                    text="{i18n>orderPaymentMethod}"
+                />
+            </Column>
+            <Column id="colPedidosTable6">
+                <Text
+                    id="txtPedidoTotal"
+                    text="{i18n>orderTotal}"
+                />
+            </Column>
+            <Column id="colPedidosTable7">
+                <Text
+                    id="txtPedidoEstado"
+                    text="{i18n>orderStatus}"
+                />
+            </Column>
+        </columns>
+        <!-- Contenido de la Tabla -->
+        <items>
+            <ColumnListItem
+                id="colLstItem"
+                type="Active"
+                press="onPressOrderItem"
+            >
+                <cells>
+                    <Text
+                        id="txtLstItem1"
+                        text="{orderModel>orderNum}"
+                    />
+                    <Text
+                        id="txtLstItem2"
+                        text="{orderModel>orderDate}"
+                    />
+                    <Text
+                        id="txtLstItem3"
+                        text="{orderModel>orderClient}"
+                    />
+                    <Text
+                        id="txtLstItem4"
+                        text="{orderModel>orderAdress}"
+                    />
+                    <Text
+                        id="txtLstItem5"
+                        text="{orderModel>orderPaymentMethod}"
+                    />
+                    <Text
+                        id="txtLstItem6"
+                        text="{orderModel>orderTotal}"
+                    />
+                    <Text
+                        id="txtLstItem7"
+                        text="{
+                            path: 'orderModel>orderStatus',
+                            formatter: '.formatter.statusText'
+                        }"
+                    >
+                        <customData>
+                            <core:CustomData
+                                key="colour"
+                                value="{orderModel>orderStatus}"
+                                writeToDom="true"
+                            />
+                        </customData>
+                    </Text>
+                </cells>
+            </ColumnListItem>
+        </items>
+    </Table>
+    <core:Fragment
+        fragmentName="zpaneltabla.paneltabla.view.fragment.OrderDialog"
+        type="XML"
+    />
+</core:FragmentDefinition>
+<!-- <Text
+                        id="txtLstItem7"
+                        text="{orderModel>orderStatus}"
+                    /> -->

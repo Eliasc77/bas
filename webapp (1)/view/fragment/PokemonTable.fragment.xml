@@ -1,0 +1,93 @@
+<core:FragmentDefinition
+    xmlns:l="sap.ui.layout"
+    xmlns:model="sap.ui.model"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+>
+    <Panel id="pnlPkmTable">
+        <!-- Parte superior del Panel (Nombre y Botones Show & Hide) -->
+        <headerToolbar>
+            <OverflowToolbar id="ovfToolbarTable">
+                <Title
+                    id="ttleTable"
+                    text="Información de Pokemons"
+                    level="H2"
+                />
+                <ToolbarSpacer id="toolbarSpacerTable" />
+                <Button
+                    id="btnShowPokemonTable"
+                    icon="sap-icon://show"
+                    text="Mostrar"
+                    press="showPokemonTable"
+                    enabled="false"
+                />
+                <Button
+                    id="btnHidePokemonTable"
+                    icon="sap-icon://hide"
+                    text="Ocultar"
+                    press="hidePokemonTable"
+                />
+            </OverflowToolbar>
+        </headerToolbar>
+        <Table
+            id="pkmTable"
+            items="{localModel>/pokemon}"
+        >
+            <!-- Cabecera de la Tabla -->
+            <columns>
+                <Column id="colPkmTble1">
+                    <Text
+                        id="txtPkmTbl1"
+                        text="Especie"
+                    />
+                </Column>
+                <Column id="colPkmTble2">
+                    <Text
+                        id="txtPkmTbl2"
+                        text="Orden"
+                    />
+                </Column>
+                <Column id="colPkmTble3">
+                    <Text
+                        id="txtPkmTbl3"
+                        text="Altura"
+                    />
+                </Column>
+                <Column id="colPkmTble4">
+                    <Text
+                        id="txtPkmTbl4"
+                        text="Peso"
+                    />
+                </Column>
+            </columns>
+            <!-- COntenido de la Tabla -->
+            <items>
+                <ColumnListItem
+                    id="colLstItem"
+                    type="Active"
+                    press="onPressItemPokemonTable"
+                >
+                    <cells>
+                        <Text
+                            id="txtLstItem1"
+                            text="{localModel>name}"
+                        />
+                        <Text
+                            id="txtLstItem2"
+                            text="{localModel>order}"
+                        />
+                        <ObjectNumber
+                            id="nmbLstItem1"
+                            number="{localModel>height}"
+                        />
+                        <ObjectNumber
+                            id="nmbLstItem2"
+                            number="{localModel>weight}"
+                        />
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+    </Panel>
+</core:FragmentDefinition>

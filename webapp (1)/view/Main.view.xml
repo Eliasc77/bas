@@ -1,0 +1,30 @@
+<mvc:View
+    controllerName="zpaneltabla.paneltabla.controller.Main"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:mvc="sap.ui.core.mvc"
+>
+    <Page
+        id="page"
+        title="{i18n>mainViewTitle}"
+    >
+        <content>
+            <core:Fragment
+                fragmentName="zpaneltabla.paneltabla.view.fragment.OrderTable"
+                type="XML"
+            />
+            <core:Fragment
+                fragmentName="zpaneltabla.paneltabla.view.fragment.OrderStatusChart"
+                type="XML"
+            />
+            <!-- <core:Fragment
+                fragmentName="zpaneltabla.paneltabla.view.fragment.PokemonForm"
+                type="XML"
+            />
+            <core:Fragment
+                fragmentName="zpaneltabla.paneltabla.view.fragment.PokemonTable"
+                type="XML"
+            /> -->
+        </content>
+    </Page>
+</mvc:View>

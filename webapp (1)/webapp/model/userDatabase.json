@@ -1,0 +1,19 @@
+{
+    "user": [
+        {
+            "userCredentials": {
+                "userName": "ayrton97",
+                "userPassword": "123456"
+            }
+        },
+        {
+            "userInfo": {
+                "userFirstName": "Ayrton",
+                "userLastName": "Lopez",
+                "userUniversity": "UNMSM",
+                "userTelephone": "983210344",
+                "userCondition": "Student"
+            }
+        }
+    ]
+}
